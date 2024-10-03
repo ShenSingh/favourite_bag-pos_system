@@ -377,15 +377,16 @@ let products = [
 
 
 let customers = [
-    { id: "C001", name: "William Defoe", email: "william@example.com", phone: "12312312", address: "123 Street" },
-    { id: "C002", name: "Jane Smith", email: "jane@example.com", phone: "45645645", address: "456 Avenue" },
-    { id: "C003", name: "Tom Hardy", email: "tom@example.com", phone: "78978978", address: "789 Boulevard" },
-    { id: "C004", name: "Emily Blunt", email: "emily@example.com", phone: "11223344", address: "112 Street" },
-    { id: "C005", name: "Scarlett Johansson", email: "scarlett@example.com", phone: "22334455", address: "223 Avenue" },
-    { id: "C006", name: "Chris Hemsworth", email: "chris@example.com", phone: "33445566", address: "334 Boulevard" },
-    { id: "C007", name: "Robert Downey", email: "robert@example.com", phone: "44556677", address: "445 Road" },
-    { id: "C008", name: "Natalie Portman", email: "natalie@example.com", phone: "55667788", address: "556 Lane" }
+    { id: "C001", name: "Dinesh Perera", email: "dinesh.perera@example.com", phone: "0771234567", address: "123 Galle " },
+    { id: "C002", name: "Nimali Fernando", email: "nimali.fern@example.com", phone: "0782345678", address: "456 Kandy " },
+    { id: "C003", name: "Chamilka Jayasinghe", email: "chamilka.jayas@example.com", phone: "0753456789", address: "789 Negombo " },
+    { id: "C004", name: "Ravi Kumara", email: "ravi.kumara@example.com", phone: "0714567890", address: "112 Mount Lavinia" },
+    { id: "C005", name: "Saman Wickramasinghe", email: "saman.wickrama@example.com", phone: "0705678901", address: "223 Matara " },
+    { id: "C006", name: "Pavithra Rajapaksha", email: "pavithra.rajap@example.com", phone: "0776789012", address: "334 Jaffna " },
+    { id: "C007", name: "Kamal Weerasinghe", email: "kamal.weera@example.com", phone: "0787890123", address: "445 Battaramulla" },
+    { id: "C008", name: "Dilani Jayawardena", email: "dilani.jayawa@example.com", phone: "0758901234", address: "556 Anuradhapura" }
 ];
+
 
 let users = [
     { id: "U001", name: "Demo Shan", email: "dshan@example.com", phone: "111222333", address: "123 Elm St", salary: 5500 },
@@ -405,8 +406,8 @@ function displayProducts() {
                 <td class="row-id">${product.code}</td>
                 <td class="row-desc">${product.description}</td>
                 <td class="row-image" style="width: 10%; height: auto;" ><img src="${product.image}" alt="${product.description}" style="width: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;"></td>
+                aspect-ratio: auto;
+                object-fit: cover;"></td>
                 <td class="row-price">${product.unitPrice.toFixed(2)}</td>
                 <td class="row-qty">${product.qtyOnHand}</td>
                 <td class="row-actions"> <button class="btn btn-danger">Update</button> </td>
