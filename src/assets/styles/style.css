@@ -1,0 +1,395 @@
+/*fonts-import*/
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    background: #FAF3E0 ;
+}
+
+.header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #584f55 ; /* Header background color */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+.aside {
+    position: fixed; /* Fix aside navigation */
+    top: 26px; /* Height of the header */
+    left: 0;
+    bottom: 0; /* Extend to the bottom of the viewport */
+    width: 15%; /* Width of the aside navigation */
+    background: rgba(0, 0, 0, 0.158); /* Aside background color */
+    overflow-y: auto; /* Scrollable if content overflows */
+    z-index: 999; /* Ensure aside is below the header */
+}
+
+.main-content {
+    margin-left: 15%; /* Leave space for the aside */
+    margin-top: 46px; /* Leave space for the header */
+    padding: 20px; /* Padding for main content */
+    height: calc(100vh - 56px); /* Set height based on viewport */
+}
+
+.dashboard-content .row:nth-child(2)
+{
+    margin-top: -2%;
+}
+/* Adjust styles for aside navigation */
+.aside-navigation {
+    background: transparent; /* Aside navigation background */
+    min-width: 200px; /* Minimum width for aside navigation */
+}
+
+.aside-navigation div
+{
+    padding-right: 0;
+    background: transparent;
+    z-index: 2;
+    border: none;
+}
+
+.aside-navigation ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aside-navigation ul li
+{
+    width: 70%;
+    min-width: 200px;
+    text-align: left;
+    padding-top: 10%;
+    margin: 0;
+}
+
+.aside-navigation ul li a
+{
+    min-width: 200px;
+    color: #333333;
+}
+
+.profile-picture
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 2%;
+    width: 100%;
+}
+
+.profile-picture img
+{
+    margin-top: 20%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    max-width: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header nav
+{
+    padding: 0;
+}
+
+.header nav div
+{
+    background-color:transparent ;
+    padding: 0.5%;
+}
+
+.customer-form
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.customer, 
+.user, 
+.product, 
+.cash-register, 
+.invoice, 
+.dashboard{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1%;
+    padding: 1%;
+    gap: 1%;
+}
+
+.form-search{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-search form div:nth-child(2)
+{
+    margin-left: -50%;
+}
+
+/*.user-table img*/
+/*{*/
+/*    width: 100%;*/
+/*    aspect-ratio: auto;*/
+/*    object-fit: cover;*/
+/*}*/
+
+.row-image
+{
+    width: 10%;
+    height: auto;
+}
+
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-box {
+    border: 2px dashed white;
+    background-color: grey;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+}
+
+.upload-box i {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.upload-box p {
+    color: white;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    color: #4a4da6;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e0e0ff;
+}
+
+img.preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.delete-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: #ff6666;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.dashboard {
+    padding: 0.5%;
+}
+
+.navbar {
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    color:  #FAF3E0;
+}
+
+.dashboard-content .row {
+    margin-top: 10px;
+}
+
+.dashboard .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dashboard .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Color and Layout for the Cards */
+.dashboard .card.bg-primary {
+    background-color: #FFD700 !important;
+    color: darkgoldenrod !important;
+}
+
+.dashboard .card.bg-secondary {
+    background-color: #D8BFD8 !important;
+    color: #800080 !important;
+}
+
+.dashboard .card.bg-success {
+    background-color: #98FB98 !important;
+    color: #008000 !important;
+}
+
+.dashboard .card-header {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+}
+
+.dashboard .row:nth-child(1) .card-body {
+    padding: 20px;
+}
+
+.dashboard .card-t {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dashboard .card-text {
+    font-size: 16px;
+}
+
+/* Charts Section */
+.dashboard .chart-card {
+    background-color: #F5F5DC;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.dashboard .card-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+canvas {
+    margin-top: 15px;
+}
+
+
+/* Button styles for Add New Item, Customer, etc. */
+.equal-height-card {
+    height: 180px;
+}
+
+.equal-height-half {
+    height: calc(80% - 10px); /* Adjusting for margin */
+}
+
+.cash-register .card:hover{
+    transform: translateY(-5px);
+}
+
+/* Responsive Grid Layout for Cards */
+@media (max-width: 1200px) {
+    .dashboard-content .row {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping of cards */
+        gap: 10px;
+    }
+
+    .col-md-4, .col-md-8 {
+        flex: 1 1 45%; /* Allow cards to shrink and wrap */
+        max-width: 45%;
+    }
+
+    .col-md-2 {
+        flex: 1 1 20%;
+        max-width: 20%;
+    }
+}
+
+/* Responsive Adjustments for Smaller Devices */
+@media (max-width: 768px) {
+    .aside {
+        grid-template-columns: 100%; /* Stack aside navigation vertically */
+    }
+
+    .dashboard-content .row {
+        flex-direction: column;
+    }
+
+    .col-md-4, .col-md-8 {
+        flex: 1 1 100%; /* Stack cards on smaller screens */
+        max-width: 100%;
+    }
+
+    .dashboard .card {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+}
+
+.navbar {
+    padding: 8px 10px; /* Reduced padding for navbar */
+}
+
+/* General Adjustments */
+.form-title {
+    padding: 10px; /* Reduce padding for form title */
+}
+
+.dashboard .bg-secondary, .dashboard .bg-success {
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
