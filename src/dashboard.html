@@ -48,37 +48,37 @@
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="dashboard.html">
                             <i class="bi bi-house"></i>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="product.html">
                             <i class="bi bi-person"></i>
                             Product
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="order.html">
                             <i class="bi bi-gear"></i>
                             Order
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="customer.html">
                             <i class="bi bi-file-earmark-text"></i>
                             Customer
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="invoice.html">
                             <i class="bi bi-file-earmark-text"></i>
                             Invoice
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="account.html">
                             <i class="bi bi-file-earmark-text"></i>
                             My Account
                         </a>
@@ -91,6 +91,98 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="contant">
+            <section class="dashboard">
+                <form>
+                    <div class="dashboard-content">
+                        <div class="row mb-4">
+                            <!-- Total Orders -->
+                            <div class="col-md-3 mb-3">
+                                <div class="card text-white bg-primary mb-3 equal-height-card" style="max-width: 18rem;">
+                                    <div class="card-header">Total Orders</div>
+                                    <div class="card-body">
+                                        <h5 class="card-t">65</h5>
+                                        <p class="card-text">+2.1%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total Sales -->
+                            <div class="col-md-3 mb-3">
+                                <div class="card text-white bg-secondary mb-3 equal-height-card" style="max-width: 18rem;">
+                                    <div class="card-header">Total Sales</div>
+                                    <div class="card-body">
+                                        <h5 class="card-t">97,056</h5>
+                                        <p class="card-text">+5.6%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total Revenue -->
+                            <div class="col-md-3 mb-3">
+                                <div class="card text-white bg-success mb-3 equal-height-card" style="max-width: 18rem;">
+                                    <div class="card-header">Total Revenue</div>
+                                    <div class="card-body">
+                                        <h5 class="card-t">27,230</h5>
+                                        <p class="card-text">+4.8%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add New Item and Add New Customer (combined) -->
+                            <div class="col-md-3 mb-3" id="new-item">
+                                <div class="row h-100">
+                                    <!-- Add New Item -->
+                                    <div class="col-12 mb-3">
+                                        <div class="card equal-height-half">
+                                            <div class="card-body d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-box fa-2x me-2"></i>
+                                                <h6 class="mt-2">Add New Item</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add New Customer -->
+                                    <div class="col-12" id="new -customer">
+                                        <div class="card equal-height-half">
+                                            <div class="card-body d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-user fa-2x me-2"></i>
+                                                <h6 class="mt-2">Add New Customer</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <!-- Charts Section -->
+                        <div class="row">
+                            <!-- Line Chart -->
+                            <div class="col-md-8 mb-4">
+                                <div class="card chart-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Order Summary</h5>
+                                        <canvas id="lineChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pie Chart -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card chart-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Top Categories</h5>
+                                        <canvas id="pieChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Transaction Section -->
+                        <div class="row">
+        
+                        </div>
+        
+                    </div>
+                </form>
+            </section>
         </div>
     </section>
 </body>
