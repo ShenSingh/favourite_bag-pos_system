@@ -1,0 +1,14 @@
+.body{
+    width: 100%;
+    height: 100vh;
+}
+#dashboard header nav{
+    background-color: orange;
+}
+#dashboard header nav .profile-img{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
