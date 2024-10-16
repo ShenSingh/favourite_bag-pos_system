@@ -90,36 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-////////////////////////////////////////////////////// Data load for Edit Customer Form //////////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function () {
-    const tableRows = document.querySelectorAll('.customer-table tbody tr');
-    const customerTableModal = new bootstrap.Modal(document.querySelector('.customer-form-edit .modal'));
-
-    const id = document.getElementById('customer-id');
-    const name = document.getElementById('customer-name');
-    const email = document.getElementById('customer-email');
-    const phone = document.getElementById('customer-phone');
-    const address = document.getElementById('customer-address');
-
-    tableRows.forEach(function (row) {
-        row.addEventListener('click', function () {
-            const customer_id = row.querySelector('.row-id').textContent;
-            const customer_name = row.querySelector('.row-name').textContent;
-            const customer_email = row.querySelector('.row-email').textContent;
-            const customer_phone = row.querySelector('.row-phone').textContent;
-            const customer_address = row.querySelector('.row-address').textContent;
-
-            id.textContent = customer_id;
-            name.value = customer_name;
-            email.value = customer_email;
-            phone.value = customer_phone;
-            address.value = customer_address;
-
-            customerTableModal.show();
-        });
-    });
-});
+;
 
 ////////////////////////////////////////////////////// User Section Load //////////////////////////////////////////////////////////
 
@@ -462,7 +433,7 @@ function displayUsers() {
 
 // Call these functions to initially load the tables
 displayProducts();
-displayCustomers();
+// displayCustomers();
 displayUsers();
 
 
@@ -558,51 +529,112 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-////////////////////////////////////////////////////////////////// Charts ////////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        // Bar Chart 1
+        var ctxBar1 = document.getElementById('barChart1').getContext('2d');
+        var barChart1 = new Chart(ctxBar1, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Order Summary',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading Bar Chart 1:', error);
+    }
 
-// Line Chart
-var ctxLine = document.getElementById('lineChart').getContext('2d');
-var lineChart = new Chart(ctxLine, {
-    type: 'line',
-    data: {
-        labels: ['Oct 11', 'Oct 15', 'Oct 19', 'Oct 25', 'Nov 1', 'Nov 5', 'Nov 11'],
-        datasets: [{
-            label: 'Selected Period',
-            data: [3000, 4000, 3500, 6000, 4500, 5000, 7000],
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        },
-            {
-                label: 'Comparison',
-                data: [2000, 3000, 2500, 4000, 3500, 4200, 6000],
-                borderColor: 'rgb(255, 99, 132)',
-                tension: 0.1
-            }]
-    },
-    options: {
-        responsive: true
+    try {
+        // Bar Chart 2
+        var ctxBar2 = document.getElementById('barChart2').getContext('2d');
+        var barChart2 = new Chart(ctxBar2, {
+            type: 'bar',
+            data: {
+                labels: ['August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Order Summary',
+                    data: [75, 69, 90, 91, 66],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error loading Bar Chart 2:', error);
+    }
+
+    try {
+        // Pie Chart 1
+        var ctxPie1 = document.getElementById('pieChart1').getContext('2d');
+        var pieChart1 = new Chart(ctxPie1, {
+            type: 'pie',
+            data: {
+                labels: ['Grocery', 'Fruits', 'Vegetables', 'Others'],
+                datasets: [{
+                    label: 'Top Categories',
+                    data: [43, 31, 15, 11],
+                    backgroundColor: [
+                        'rgb(255, 179, 186)',  // Pastel Red
+                        'rgb(255, 223, 186)',  // Pastel Orange
+                        'rgb(255, 255, 186)',  // Pastel Yellow
+                        'rgb(186, 255, 201)',  // Pastel Green
+                        'rgb(186, 225, 255)'   // Pastel Blue
+                    ]
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    } catch (error) {
+        console.error('Error loading Pie Chart 1:', error);
+    }
+
+    try {
+        // Pie Chart 2
+        var ctxPie2 = document.getElementById('pieChart2').getContext('2d');
+        var pieChart2 = new Chart(ctxPie2, {
+            type: 'pie',
+            data: {
+                labels: ['Grocery', 'Fruits', 'Vegetables', 'Others'],
+                datasets: [{
+                    label: 'Top Categories',
+                    data: [43, 31, 15, 11],
+                    backgroundColor: [
+                        'rgb(255, 179, 186)',  // Pastel Red
+                        'rgb(255, 223, 186)',  // Pastel Orange
+                        'rgb(255, 255, 186)',  // Pastel Yellow
+                        'rgb(186, 255, 201)',  // Pastel Green
+                        'rgb(186, 225, 255)'   // Pastel Blue
+                    ]
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    } catch (error) {
+        console.error('Error loading Pie Chart 2:', error);
     }
 });
-
-// Pie Chart
-var ctxPie = document.getElementById('pieChart').getContext('2d');
-var pieChart = new Chart(ctxPie, {
-    type: 'pie',
-    data: {
-        labels: ['Grocery', 'Fruits', 'Vegetables', 'Others'],
-        datasets: [{
-            label: 'Top Categories',
-            data: [43, 31, 15, 11],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)'
-            ]
-        }]
-    },
-    options: {
-        responsive: true
-    }
-});
-

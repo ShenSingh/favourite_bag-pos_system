@@ -152,32 +152,43 @@
                             </div>
         
                         </div>
-        
+
                         <!-- Charts Section -->
                         <div class="row">
-                            <!-- Line Chart -->
-                            <div class="col-md-8 mb-4">
+                            <!-- Bar Chart -->
+                            <div class="col-md-4 mb-4">
                                 <div class="card chart-card">
                                     <div class="card-body">
                                         <h5 class="card-title">Order Summary</h5>
-                                        <canvas id="lineChart" width="400" height="200"></canvas>
+                                        <canvas id="barChart1" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="card chart-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Order Summary</h5>
+                                        <canvas id="barChart2" width="400" height="200"></canvas>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Pie Chart -->
+                            <!-- Pie Chart 1 -->
                             <div class="col-md-4 mb-4">
                                 <div class="card chart-card">
                                     <div class="card-body">
                                         <h5 class="card-title">Top Categories</h5>
-                                        <canvas id="pieChart" width="400" height="200"></canvas>
+                                        <canvas id="pieChart1" width="400" height="200"></canvas>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-        
-                        <!-- Transaction Section -->
-                        <div class="row">
-        
+                            <!-- Pie Chart 2 -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card chart-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Top Categories</h5>
+                                        <canvas id="pieChart2" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
         
                     </div>
@@ -200,5 +211,6 @@
 
     <!-- Custom JS -->
     <script src="../src/assets/scripts/script.js"></script>
+    <!-- <script src="../src/assets/scripts/chart.js"></script> -->
 </body>
 </html>

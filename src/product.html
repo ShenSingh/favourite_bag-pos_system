@@ -137,7 +137,18 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        <!--  -->
+                    <tr>
+                        <th scope="row" class="row-id">1</th>
+                        <td class="row-desc">Hand Bag</td>
+                        <td class="row-image">
+                            <img src="https://imgs.search.brave.com/Ppk9XdIZEmkw2qfg49LZpOZK6P7_5dyEHum0Xi-q10g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODQx/NzIyNjEyL3Bob3Rv/L2hhbmRiYWctc3Rv/Y2stcGhvdG8uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPS1s/RWVXalVfanQtZmI1/TnVZcU1lRlZtR1hf/cFd0VUl3TGhwUG5N/TlZvdHM9" alt="Chocolate cake" class="preview" style="width: 100px">
+                        </td>
+                        <td class="row-price">Rs.1800.00</td>
+                        <td class="row-qty">15</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -145,5 +156,112 @@
     </section>
         </div>
     </section>
+
+
+    <!-- Product Form (New) -->
+    <section class="product-form-new" style="display: none">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">New Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="new-product-form">
+                            <div class="mb-3">
+                                <label for="newProductCode" class="form-label">Code:</label>
+                                <input id="newProductCode" class="form-control" type="text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newProductDesc" class="form-label">Description:</label>
+                                <input id="newProductDesc" class="form-control" type="text">
+                            </div>
+                            <div class="upload-container">
+                                <div class="upload-box" id="uploadBoxNew">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <p>Drag & Drop to Upload File</p>
+                                    <p>OR</p>
+                                    <button type="button" id="browseFileButtonNew">Browse File</button>
+                                    <input type="file" id="fileInputNew" hidden>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newProductUnitPrice" class="form-label">Unit Price:</label>
+                                <input id="newProductUnitPrice" class="form-control" type="text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newProductQtyOnHand" class="form-label">Qty On Hand:</label>
+                                <input id="newProductQtyOnHand" class="form-control" type="text">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Form (Edit) -->
+    <section class="product-form-edit">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="edit-product-form">
+                            <div class="mb-3">
+                                <label for="editProductCode" class="form-label">Code:</label>
+                                <input id="editProductCode" class="form-control" type="text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductDesc" class="form-label">Description:</label>
+                                <input id="editProductDesc" class="form-control" type="text">
+                            </div>
+                            <div class="upload-container">
+                                <div class="upload-box" id="uploadBoxEdit">
+                                    <!-- Image Preview and Upload UI -->
+                                    <img id="imagePreviewEdit" class="preview" src="" alt="Image Preview" style="display:none;" />
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <p id="uploadTextEdit">Drag & Drop to Upload File</p>
+                                    <p>OR</p>
+                                    <button type="button" id="browseFileButtonEdit">Browse File</button>
+                                    <input type="file" id="fileInputEdit" hidden>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductUnitPrice" class="form-label">Unit Price:</label>
+                                <input id="editProductUnitPrice" class="form-control" type="text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductQtyOnHand" class="form-label">Qty On Hand:</label>
+                                <input id="editProductQtyOnHand" class="form-control" type="text">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-success">Update</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--    Bootstrap script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+    <!-- Custom JS -->
+    <script src="../src/assets/scripts/script.js"></script>
+    
 </body>
 </html>
