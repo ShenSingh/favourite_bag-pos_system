@@ -65,9 +65,18 @@ body
 {
     flex-grow: 1;
 }
-
-#sign-out-btn
-{
+.aside-navigation img{
+    width: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-size: cover;
+    object-fit: cover;
+    margin-top: -100px;
+}
+#sign-out-btn button{
+    background-color: #FD753B;
+}
+#sign-out-btn{
     width: 80%;
     margin-bottom: 5%;
     font-family: 'Poppins', sans-serif;

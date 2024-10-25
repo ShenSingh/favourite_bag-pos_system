@@ -433,13 +433,7 @@ let customers = [
 
 let users = [
     { id: "U001", name: "John Doe", email: "john@example.com", phone: "12312312", address: "456 Avenue", salary: 5000 },
-    { id: "U002", name: "Jane Roe", email: "jane@example.com", phone: "23423423", address: "567 Boulevard", salary: 4500 },
-    { id: "U003", name: "Chris Evans", email: "chris@example.com", phone: "34534534", address: "678 Street", salary: 6000 },
-    { id: "U004", name: "Emma Watson", email: "emma@example.com", phone: "45645645", address: "789 Avenue", salary: 5500 },
-    { id: "U005", name: "Tom Holland", email: "tom@example.com", phone: "56756756", address: "890 Road", salary: 4000 },
-    { id: "U006", name: "Brie Larson", email: "brie@example.com", phone: "67867867", address: "901 Lane", salary: 6200 },
-    { id: "U007", name: "Mark Ruffalo", email: "mark@example.com", phone: "78978978", address: "123 Plaza", salary: 4800 },
-    { id: "U008", name: "Zendaya Maree", email: "zendaya@example.com", phone: "89089089", address: "456 Terrace", salary: 5200 }
+    { id: "U002", name: "Zendaya Maree", email: "zendaya@example.com", phone: "89089089", address: "456 Terrace", salary: 5200 }
 ];
 
 /////////////////////////////////////////////////////////////////////// Table data display //////////////////////////////////////////////////////////
@@ -460,7 +454,7 @@ function displayProducts() {
     object-fit: cover;"></td>
                 <td class="row-price">${product.unitPrice.toFixed(2)}</td>
                 <td class="row-qty">${product.qtyOnHand}</td>
-                <td class="row-actions"> <button class="btn btn-danger">Delete</button> </td>
+                <td class="row-actions"> <button class="btn btn-danger">Update</button> </td>
             </tr>
         `;
         productTableBody.append(row);
@@ -480,7 +474,7 @@ function displayCustomers() {
                 <td class="row-email">${customer.email}</td>
                 <td class="row-phone">${customer.phone}</td>
                 <td class="row-address">${customer.address}</td>
-                <td class="row-actions"> <button class="btn btn-danger">Delete</button> </td>
+                <td class="row-actions"> <button class="btn btn-danger">Update</button> </td>
             </tr>
         `;
         customerTableBody.append(row);
@@ -503,7 +497,7 @@ function displayUsers() {
                 <td class="row-phone">${user.phone}</td>
                 <td class="row-address">${user.address}</td>
                 <td class="row-salary">${user.salary}</td>
-                <td class="row-actions"><button class="btn btn-danger">Delete</button> </td>
+                <td class="row-actions"><button class="btn btn-danger">Update</button> </td>
             </tr>
         `;
         userTableBody.append(row);
@@ -639,15 +633,15 @@ var ctxPie = $('#pieChart').get(0).getContext('2d');
 var pieChart = new Chart(ctxPie, {
     type: 'pie',
     data: {
-        labels: ['Grocery', 'Fruits', 'Vegetables', 'Others'],
+        labels: ['Hand Bag', 'School Bag', 'SuitCase', 'Others'],
         datasets: [{
             label: 'Top Categories',
             data: [43, 31, 15, 11],
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 206, 86)',
-                'rgb(75, 192, 192)'
+                'rgb(200, 120, 255)',
+                'rgb(0, 191, 165)',
+                'rgb(255, 159, 64)',
+                'rgb(60, 180, 75)'
             ]
         }]
     },
