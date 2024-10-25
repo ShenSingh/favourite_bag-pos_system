@@ -1,37 +1,46 @@
-/*fonts-import*/
-/*Poppins*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
+/*fonts-import*/
+
+/*Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333333;
     background: #FAF3E0 ;
 }
 
-.header {
+.header
+{
     position: fixed; /* Fix header at the top */
     top: 0;
     left: 0;
     right: 0;
-    background: #584f55 ; /* Header background color */
+    background: #B0E0E6 ; /* Header background color */
     z-index: 1000; /* Ensure header is above other content */
 }
 
-.aside {
+.aside
+{
+    display: none;
     position: fixed; /* Fix aside navigation */
     top: 26px; /* Height of the header */
     left: 0;
     bottom: 0; /* Extend to the bottom of the viewport */
     width: 15%; /* Width of the aside navigation */
-    background: rgba(0, 0, 0, 0.158); /* Aside background color */
+    background: #fd753b49; /* Aside background color */
     overflow-y: auto; /* Scrollable if content overflows */
     z-index: 999; /* Ensure aside is below the header */
+    padding-top: 100px;
+    border-right: #fd753b solid 1px;
 }
 
-.main-content {
+.main-content
+{
     margin-left: 15%; /* Leave space for the aside */
     margin-top: 46px; /* Leave space for the header */
     padding: 20px; /* Padding for main content */
@@ -46,6 +55,26 @@ body {
 .aside-navigation {
     background: transparent; /* Aside navigation background */
     min-width: 200px; /* Minimum width for aside navigation */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    place-items: center;
+}
+
+.aside-navigation .card
+{
+    flex-grow: 1;
+}
+
+#sign-out-btn
+{
+    width: 80%;
+    margin-bottom: 5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#sign-out-btn span{
+    margin-left: 10%;
 }
 
 .aside-navigation div
@@ -78,6 +107,8 @@ body {
 {
     min-width: 200px;
     color: #333333;
+    text-align: center;
+    font-weight: 600;
 }
 
 .profile-picture
@@ -100,7 +131,8 @@ body {
     object-fit: cover;
 }
 
-.header{
+.header
+{
     position: fixed;
     top: 0;
     left: 0;
@@ -115,8 +147,13 @@ body {
 
 .header nav div
 {
-    background-color:transparent ;
+    background: #FD753B;
     padding: 0.5%;
+}
+.header .pro-img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
 }
 
 .customer-form
@@ -127,19 +164,16 @@ body {
     padding: 20px;
 }
 
-.customer, 
-.user, 
-.product, 
-.cash-register, 
-.invoice, 
-.dashboard{
-    font-family: 'Poppins', sans-serif;
+.customer, .user, .product, .cash-register, .invoice, .dashboard
+{
+    font-family: 'Inter', sans-serif;
     margin-top: 1%;
     padding: 1%;
     gap: 1%;
 }
 
-.form-search{
+.form-search
+{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -148,13 +182,6 @@ body {
 {
     margin-left: -50%;
 }
-
-/*.user-table img*/
-/*{*/
-/*    width: 100%;*/
-/*    aspect-ratio: auto;*/
-/*    object-fit: cover;*/
-/*}*/
 
 .row-image
 {
@@ -255,11 +282,10 @@ img.preview {
 }
 
 .dashboard .card {
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
     padding: 10px;
     margin-bottom: 10px;
+    border: none !important;
 }
 
 .dashboard .card:hover {
@@ -267,20 +293,11 @@ img.preview {
 }
 
 /* Color and Layout for the Cards */
-.dashboard .card.bg-primary {
-    background-color: #FFD700 !important;
-    color: darkgoldenrod !important;
+.dashboard .card.bg-primary,.dashboard .card.bg-secondary, .dashboard .card.bg-success {
+    background-color: transparent !important;
+    color: rgb(228, 62, 12) !important;
 }
 
-.dashboard .card.bg-secondary {
-    background-color: #D8BFD8 !important;
-    color: #800080 !important;
-}
-
-.dashboard .card.bg-success {
-    background-color: #98FB98 !important;
-    color: #008000 !important;
-}
 
 .dashboard .card-header {
     font-size: 18px;
@@ -304,13 +321,13 @@ img.preview {
 
 /* Charts Section */
 .dashboard .chart-card {
-    background-color: #F5F5DC;
+    background-color: transparent;
     padding: 20px;
     border-radius: 12px;
 }
 
 .dashboard .card-title {
-    color: #fff;
+    color: #333333;
     font-size: 18px;
     font-weight: bold;
 }
@@ -333,8 +350,66 @@ canvas {
     transform: translateY(-5px);
 }
 
+.navbar {
+    padding: 8px 10px; /* Reduced padding for navbar */
+}
+
+/* General Adjustments */
+.form-title {
+    padding: 10px; /* Reduce padding for form title */
+}
+
+.dashboard .bg-secondary, .dashboard .bg-success {
+    font-size: 14px;
+}
+
+
+section.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+.rectangle-container {
+    width: 63%; /* Adjust width as needed */
+    height: 500px; /* Fixed height for rectangle */
+    border: 2px solid #ccc; /* Rectangle border */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+.login-form {
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+}
+.illustration {
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.illustration img {
+    width: 100%;
+}
+
+.vertical-align .col-md-8,
+.vertical-align .col-md-4 {
+    width: 100%;
+    max-width: 100%;
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
 /* Responsive Grid Layout for Cards */
 @media (max-width: 1200px) {
+
     .dashboard-content .row {
         display: flex;
         flex-wrap: wrap; /* Allow wrapping of cards */
@@ -352,44 +427,129 @@ canvas {
     }
 }
 
-/* Responsive Adjustments for Smaller Devices */
 @media (max-width: 768px) {
     .aside {
-        grid-template-columns: 100%; /* Stack aside navigation vertically */
+        display: none;
+    }
+
+    .rectangle-container {
+        width: 90%; /* Make it full-width on tablets */
+        height: auto; /* Auto height for better flexibility */
+    }
+    .illustration {
+        max-width: 100%; /* Full width for the illustration */
+        margin-bottom: 20px;
+    }
+    .login-form {
+        max-width: 100%; /* Full width for the form */
+    }
+
+    #log {
+        width: 80%;
     }
 
     .dashboard-content .row {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping of cards */
+        place-items: center;
+        gap: 10px;
     }
 
-    .col-md-4, .col-md-8 {
-        flex: 1 1 100%; /* Stack cards on smaller screens */
+    .col-md-3 {
+        flex: 1 1 100%; /* Make each card take full width */
         max-width: 100%;
     }
 
-    .dashboard .card {
-        margin-bottom: 10px;
-        padding: 8px;
+    .equal-height-card, .equal-height-half {
+        height: auto; /* Adjust height for better flexibility */
+    }
+
+    .dashboard-content .row .col-md-3 {
+        flex: 0 0 100%; /* Make each card take full width */
+        max-width: 100%;
+    }
+
+    .dashboard-content .row .card {
+        margin: 0 auto; /* Center align the cards */
+        max-width: 90%; /* Reduce the width of the cards */
+    }
+
+    .dashboard-content .row .card .card-body {
+        text-align: center; /* Center align text inside the cards */
     }
 }
 
-.navbar {
-    padding: 8px 10px; /* Reduced padding for navbar */
+@media (max-width: 425px) {
+    .aside {
+        display: none;
+    }
+    .main-content {
+        margin-top: 25%;
+    }
+
+    .rectangle-container {
+        flex-direction: column; /* Stack the elements on top of each other */
+        height: auto; /* Auto height */
+        padding: 10px;
+    }
+    .illustration {
+        margin-bottom: 15px; /* Reduced margin on mobile */
+    }
+    .login-form {
+        padding: 15px; /* Reduce form padding */
+    }
+    #signInBtn {
+        font-size: 1rem; /* Adjust font size for smaller devices */
+    }
+    #log {
+        width: 80%;
+    }
 }
 
-/* General Adjustments */
-.form-title {
-    padding: 10px; /* Reduce padding for form title */
+@media (max-width: 375px) {
+    .aside {
+        display: none;
+    }
+    .main-content {
+        margin-top: 30%;
+    }
+    .rectangle-container {
+        padding: 10px; /* Reduce padding for rectangle */
+    }
+    .illustration {
+        margin-bottom: 10px; /* Reduced margin on mobile */
+    }
+    .login-form {
+        padding: 10px; /* Reduce padding for form */
+    }
+    #signInBtn {
+        font-size: 0.9rem; /* Adjust font size for smaller devices */
+    }
+    #log {
+        width: 80%;
+    }
 }
 
-.dashboard .bg-secondary, .dashboard .bg-success {
-    font-size: 14px;
+@media (max-width: 320px) {
+    .aside {
+        display: none;
+    }
+    .main-content {
+        margin-top: 35%;
+    }
+    .rectangle-container {
+        padding: 5px; /* Reduce padding for rectangle */
+    }
+    .illustration {
+        margin-bottom: 5px; /* Reduced margin on mobile */
+    }
+    .login-form {
+        padding: 5px; /* Reduce padding for form */
+    }
+    #signInBtn {
+        font-size: 0.8rem; /* Adjust font size for smaller devices */
+    }
+    #log {
+        width: 80%;
+    }
 }
-
-
-
-
-
-
-
-
