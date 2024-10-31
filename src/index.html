@@ -343,10 +343,10 @@
     <section id="cash-register" class="cash-register" style="display: none">
         <form>
             <div class="form-title">
-                <nav class="navbar">
+                <nav class="navbar" >
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            Orders
+                            Order
                         </a>
                     </div>
                 </nav>
@@ -357,7 +357,7 @@
             <!-- POS Layout Start -->
             <div class="container-fluid">
 
-                <div class="row">
+                <div class="row" >
 
                     <!-- Product List -->
                     <div class="col-md-8 p-4">
@@ -367,7 +367,9 @@
                                 <div class="container">
                                     <form class="d-flex" role="search">
                                         <div>
-                                            <input class="form-control me-2" type="search" placeholder="Search by Customer Phone Number" aria-label="Search by Phone Number">
+                                            <select class="form-select" aria-label="Default select example" id="orderCustomerId">
+                                                <option selected>Select the customer</option>
+                                            </select>
                                         </div>
                                         <div>
                                             <button class="btn btn-outline-info" type="submit">Search</button>
@@ -384,10 +386,9 @@
 
                         <!-- Categories -->
                         <div class="mb-4">
-                            <button class="btn btn-outline-primary me-2">All</button>
-                            <button class="btn btn-outline-secondary me-2">HandBags</button>
-                            <button class="btn btn-outline-secondary me-2">SchoolBag</button>
-                            <button class="btn btn-outline-secondary">OfficeBag</button>
+                            <button class="btn btn-outline-primary me-2" id="all-btn">All</button>
+                            <button class="btn btn-outline-primary me-2" id="handBag-btn">HandBag</button>
+                            <button class="btn btn-outline-primary me-2" id="schoolBag-btn">SchoolBag</button>
                         </div>
 
                         <!-- Product Cards Container -->
@@ -397,36 +398,28 @@
                     </div>
 
                     <!-- Cart/Order Summary -->
-                    <div class="col-md-4 p-4">
+                    <div id="bill" class="col-md-4 p-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">William Defoe</h5>
-                                <p class="card-text">#12355552</p>
+                                <p class="card-text">#12312312</p>
 
                                 <h6>Your Order:</h6>
-                                <ul class="list-group mb-3">
-                                    <li class="list-group-item d-flex justify-content-between">
-                                        <span>HandBag01</span>
-                                        <span>$30.00</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between">
-                                        <span>SchoolBag03</span>
-                                        <span>$15.00</span>
-                                    </li>
+                                <ul id="cart" class="list-group mb-3">
+                                    <!-- Items -->
                                 </ul>
 
                                 <h6>Total:</h6>
-                                <p>Subtotal: $45.99</p>
-                                <p>Service Tax: $1.00</p>
-                                <h6>Total Payment: $46.00</h6>
+                                <p id="subtotal">Subtotal: $0.00</p>
+                                <p id="service-tax">Service Tax: $0.00</p>
+                                <h6 id="total-payment">Total Payment: $0.00</h6>
 
                                 <div class="mb-3">
-                                    <label for="paymentMethod" class="form-label">Payment Method</label>
-                                    <select class="form-select" id="paymentMethod">
-                                        <option selected>Master Card</option>
-                                        <option>Paypal</option>
-                                        <option>Scan Code</option>
-                                    </select>
+                                    <label for="cash" class="form-label">Cash</label>
+                                    <input id="cash" class="form-control" type="text">
+                                    <label for="balance" class="form-label">Balance</label>
+                                    <input id="balance" class="form-control" type="text">
+
                                 </div>
 
                                 <button class="btn btn-primary w-100">Make Order</button>
