@@ -1,11 +1,9 @@
 
 /*fonts-import*/
-
 /*Inter*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-body
-{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,8 +12,7 @@ body
     background: #FAF3E0 ;
 }
 
-.header
-{
+.header {
     position: fixed; /* Fix header at the top */
     top: 0;
     left: 0;
@@ -24,14 +21,13 @@ body
     z-index: 1000; /* Ensure header is above other content */
 }
 
-.aside
-{
+.aside {
     display: none;
     position: fixed; /* Fix aside navigation */
-    top: 26px; /* Height of the header */
+    top: 10px; /* Height of the header */
     left: 0;
     bottom: 0; /* Extend to the bottom of the viewport */
-    width: 15%; /* Width of the aside navigation */
+    width: 17%; /* Width of the aside navigation */
     background: #fd753b49; /* Aside background color */
     overflow-y: auto; /* Scrollable if content overflows */
     z-index: 999; /* Ensure aside is below the header */
@@ -39,16 +35,14 @@ body
     border-right: #fd753b solid 1px;
 }
 
-.main-content
-{
-    margin-left: 15%; /* Leave space for the aside */
+.main-content {
+    margin-left: 17%; /* Leave space for the aside */
     margin-top: 46px; /* Leave space for the header */
     padding: 20px; /* Padding for main content */
     height: calc(100vh - 56px); /* Set height based on viewport */
 }
 
-.dashboard-content .row:nth-child(2)
-{
+.dashboard-content .row:nth-child(2) {
     margin-top: -2%;
 }
 /* Adjust styles for aside navigation */
@@ -61,8 +55,7 @@ body
     place-items: center;
 }
 
-.aside-navigation .card
-{
+.aside-navigation .card {
     flex-grow: 1;
 }
 .aside-navigation img{
@@ -86,16 +79,14 @@ body
     margin-left: 10%;
 }
 
-.aside-navigation div
-{
+.aside-navigation div {
     padding-right: 0;
     background: transparent;
     z-index: 2;
     border: none;
 }
 
-.aside-navigation ul
-{
+.aside-navigation ul {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -103,8 +94,7 @@ body
     font-family: 'Poppins', sans-serif;
 }
 
-.aside-navigation ul li
-{
+.aside-navigation ul li {
     width: 70%;
     min-width: 200px;
     text-align: left;
@@ -112,16 +102,14 @@ body
     margin: 0;
 }
 
-.aside-navigation ul li a
-{
+.aside-navigation ul li a {
     min-width: 200px;
     color: #333333;
     text-align: center;
     font-weight: 600;
 }
 
-.profile-picture
-{
+.profile-picture {
     display: grid;
     grid-template-columns: 1fr;
     place-items: center;
@@ -129,8 +117,7 @@ body
     width: 100%;
 }
 
-.profile-picture img
-{
+.profile-picture img {
     margin-top: 20%;
     width: 100%;
     aspect-ratio: 1/1;
@@ -140,8 +127,7 @@ body
     object-fit: cover;
 }
 
-.header
-{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -149,15 +135,18 @@ body
     z-index: 1000;
 }
 
-.header nav
-{
+.header nav {
     padding: 0;
 }
 
-.header nav div
-{
+.header nav div {
     background: #FD753B;
     padding: 0.5%;
+}
+.header .main-logo{
+    width: 200px;
+    height: 50px;
+    margin-left: 10px;
 }
 .header .pro-img{
     width: 50px;
@@ -165,35 +154,35 @@ body
     border-radius: 50%;
 }
 
-.customer-form
-{
+.customer-form {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
     padding: 20px;
 }
 
-.customer, .user, .product, .cash-register, .invoice, .dashboard
-{
+.customer,
+.user,
+.product,
+.cash-register,
+.invoice,
+.dashboard {
     font-family: 'Inter', sans-serif;
     margin-top: 1%;
     padding: 1%;
     gap: 1%;
 }
 
-.form-search
-{
+.form-search {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.form-search form div:nth-child(2)
-{
+.form-search form div:nth-child(2) {
     margin-left: -50%;
 }
 
-.row-image
-{
+.row-image {
     width: 10%;
     height: auto;
 }
@@ -368,7 +357,8 @@ canvas {
     padding: 10px; /* Reduce padding for form title */
 }
 
-.dashboard .bg-secondary, .dashboard .bg-success {
+.dashboard .bg-secondary,
+.dashboard .bg-success {
     font-size: 14px;
 }
 
@@ -562,3 +552,7 @@ section.login-page {
         width: 80%;
     }
 }
+.form-search{
+    margin-bottom: 10px;
+}
+

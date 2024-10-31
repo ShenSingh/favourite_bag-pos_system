@@ -6,25 +6,21 @@
 
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Favicon-->
     <link rel="icon" href="../src/assets/images/favicon.ico" type="image/x-icon">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <!-- normalize.css -->
     <link rel="stylesheet" href="assets/styles/normalize.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/styles/style.css">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+
     <!-- JQuey -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
@@ -61,22 +57,102 @@
         </div>
     </section>
 
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard" style="display:none;">
+        <form>
+            <div class="dashboard-content">
+                <div class="row mb-4" style="border: 2px solid #FD753B; border-radius: 50px;">
+                    <!-- Stat Cards Row with Background Color -->
+                    <div class="row" style="margin: 0 auto; place-items: center;">
+                        <!-- Total Orders -->
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white bg-primary equal-height-card" style="max-width: 18rem;">
+                                <div class="card-header">Total Orders</div>
+                                <div class="card-body">
+                                    <h5 class="card-t">65</h5>
+                                    <p class="card-text">+2.1%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total Sales -->
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white bg-secondary equal-height-card" style="max-width: 18rem;">
+                                <div class="card-header">Total Sales</div>
+                                <div class="card-body">
+                                    <h5 class="card-t">97,056</h5>
+                                    <p class="card-text">+5.6%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total Revenue -->
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white bg-success equal-height-card" style="max-width: 18rem;">
+                                <div class="card-header">Total Revenue</div>
+                                <div class="card-body">
+                                    <h5 class="card-t">27,230</h5>
+                                    <p class="card-text">+4.8%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total Orders -->
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-white bg-primary equal-height-card" style="max-width: 18rem;">
+                                <div class="card-header">Total Orders</div>
+                                <div class="card-body">
+                                    <h5 class="card-t">65</h5>
+                                    <p class="card-text">+2.1%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="row" id="charts-section">
+                    <!-- Bar Chart -->
+                    <div class="col-md-8 mb-4">
+                        <div class="card chart-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Order Summary</h5>
+                                <canvas id="barChart" width="400" height="200"></canvas> <!-- Updated ID -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pie Chart -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card chart-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Top Categories</h5>
+                                <canvas id="pieChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transaction Section -->
+                <div class="row"></div>
+            </div>
+        </form>
+    </section>
+
     <!-- Header -->
     <div id="header" class="header" style="display:none;">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" style="color: white;">
-                    <span>Favourite Bags</span>
+                    <span>
+                        <img src="assets/images/logo.png" class="main-logo" alt="logo">
+                    </span>
                 </a>
                 <form class="d-flex" role="search">
-                   <img class="pro-img" src="../src/assets/images/profile.jpeg" alt="">
+                    <img class="pro-img" src="../src/assets/images/profile.jpeg" alt="">
                 </form>
             </div>
         </nav>
     </div>
 
     <!-- Navigation -->
-    <div id="aside" class="aside">
+    <div id="aside" class="aside" style="display: none;">
         <div class="aside-navigation">
             <div class="card text-center">
                 <img src="../src/assets/images/THE.png"alt="">
@@ -108,9 +184,10 @@
     </div>
 
     <!-- Main Content -->
-    <div id="main-content" class="main-content" style="display:none;">
-</div>
+    <div id="main-content" class="main-content" style="display:none;"></div>
 
+    
+</div>
 
     <!-- Customer Section -->
     <section id="customer" class="customer" style="display: none">
@@ -201,9 +278,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Salary</th>
+                        <th scope="col">Password</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -230,7 +305,6 @@
 
             <div class="form-search">
                 <nav class="navbar bg-body-tertiary">
-                    <div class="container">
                         <form class="d-flex" role="search">
                             <div>
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -242,7 +316,6 @@
                                 <button type="button" class="btn btn-primary" id="product-add-btn">+ Add Product</button>
                             </div>
                         </form>
-                    </div>
                 </nav>
             </div>
 
@@ -312,9 +385,9 @@
                         <!-- Categories -->
                         <div class="mb-4">
                             <button class="btn btn-outline-primary me-2">All</button>
-                            <button class="btn btn-outline-secondary me-2">Cakes</button>
-                            <button class="btn btn-outline-secondary me-2">Cookies</button>
-                            <button class="btn btn-outline-secondary">Drinks</button>
+                            <button class="btn btn-outline-secondary me-2">HandBags</button>
+                            <button class="btn btn-outline-secondary me-2">SchoolBag</button>
+                            <button class="btn btn-outline-secondary">OfficeBag</button>
                         </div>
 
                         <!-- Product Cards Container -->
@@ -328,24 +401,24 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">William Defoe</h5>
-                                <p class="card-text">#12312312</p>
+                                <p class="card-text">#12355552</p>
 
                                 <h6>Your Order:</h6>
                                 <ul class="list-group mb-3">
                                     <li class="list-group-item d-flex justify-content-between">
-                                        <span>Healthy Salad</span>
-                                        <span>$10.00</span>
+                                        <span>HandBag01</span>
+                                        <span>$30.00</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
-                                        <span>Smokey Beef</span>
-                                        <span>$12.00</span>
+                                        <span>SchoolBag03</span>
+                                        <span>$15.00</span>
                                     </li>
                                 </ul>
 
                                 <h6>Total:</h6>
-                                <p>Subtotal: $32.99</p>
-                                <p>Service Tax: $2.00</p>
-                                <h6>Total Payment: $34.99</h6>
+                                <p>Subtotal: $45.99</p>
+                                <p>Service Tax: $1.00</p>
+                                <h6>Total Payment: $46.00</h6>
 
                                 <div class="mb-3">
                                     <label for="paymentMethod" class="form-label">Payment Method</label>
@@ -435,94 +508,13 @@
         </form>
     </section>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard" style="display:none;">
-        <form>
-            <div class="dashboard-content">
-                <div class="row mb-4" style="border: 2px solid #FD753B; border-radius: 50px;">
-                    <!-- Stat Cards Row with Background Color -->
-                    <div class="row" style="margin: 0 auto; place-items: center;">
-                        <!-- Total Orders -->
-                        <div class="col-md-3 mb-3">
-                            <div class="card text-white bg-primary equal-height-card" style="max-width: 18rem;">
-                                <div class="card-header">Total Orders</div>
-                                <div class="card-body">
-                                    <h5 class="card-t">65</h5>
-                                    <p class="card-text">+2.1%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Total Sales -->
-                        <div class="col-md-3 mb-3">
-                            <div class="card text-white bg-secondary equal-height-card" style="max-width: 18rem;">
-                                <div class="card-header">Total Sales</div>
-                                <div class="card-body">
-                                    <h5 class="card-t">97,056</h5>
-                                    <p class="card-text">+5.6%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Total Revenue -->
-                        <div class="col-md-3 mb-3">
-                            <div class="card text-white bg-success equal-height-card" style="max-width: 18rem;">
-                                <div class="card-header">Total Revenue</div>
-                                <div class="card-body">
-                                    <h5 class="card-t">27,230</h5>
-                                    <p class="card-text">+4.8%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Total Orders -->
-                        <div class="col-md-3 mb-3">
-                            <div class="card text-white bg-primary equal-height-card" style="max-width: 18rem;">
-                                <div class="card-header">Total Orders</div>
-                                <div class="card-body">
-                                    <h5 class="card-t">65</h5>
-                                    <p class="card-text">+2.1%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
 
-                <!-- Charts Section -->
-                <div class="row" id="charts-section">
-                    <!-- Bar Chart -->
-                    <div class="col-md-8 mb-4">
-                        <div class="card chart-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Order Summary</h5>
-                                <canvas id="barChart" width="400" height="200"></canvas> <!-- Updated ID -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pie Chart -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card chart-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Top Categories</h5>
-                                <canvas id="pieChart" width="400" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Transaction Section -->
-                <div class="row">
-
-                </div>
-
-            </div>
-        </form>
-    </section>
 
 
 
     <!-- Forms -->
-    <!-- Customer Form -->
-    <section class="customer-form">
+    <!-- Customer Add Form -->
+    <section class="customer-form-new">
         <div class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -533,34 +525,33 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label">Customer Id</label>
+                                <label for="add-customer-code" class="form-label">Id:</label>
+                                <input id="add-customer-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Name</label>
-                                <input class="form-control" type="text" aria-label="default input example">
+                                <label for="add-customer-name" class="form-label">Name</label>
+                                <input id="add-customer-name" class="form-control" type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Address</label>
-                                <input class="form-control" id="customer-address2" type="text" aria-label="default input example">
+                                <label for="add-customer-address" class="form-label">Address</label>
+                                <input id="add-customer-address" class="form-control" type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label for="customerPhone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="customerPhone"
+                                <label for="add-customer-phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="add-customer-phone"
                                        placeholder="(123) 456-7890"
                                        pattern="^\(\d{3}\) \d{3}-\d{4}$"
                                        title="Phone number should be in the format (123) 456-7890">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                                <label for="add-customer-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="add-customer-email" aria-describedby="emailHelp">
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button id="save-customer-btn" type="button" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -579,44 +570,42 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="customer-id" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label" id="customer-id">Customer Id</label>
+                                <label for="edit-customer-code" class="form-label">Code:</label>
+                                <input id="edit-customer-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-name" class="form-label">Name</label>
-                                <input class="form-control" id="customer-name"type="text" aria-label="default input example">
+                                <label for="edit-customer-name" class="form-label">Name</label>
+                                <input class="form-control" id="edit-customer-name"type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-address" class="form-label">Address</label>
-                                <input class="form-control" id="customer-address" type="text" aria-label="default input example">
+                                <label for="edit-customer-address" class="form-label">Address</label>
+                                <input class="form-control" id="edit-customer-address" type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="customer-phone"
+                                <label for="edit-customer-phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="edit-customer-phone"
                                        placeholder="(123) 456-7890"
                                        pattern="^\(\d{3}\) \d{3}-\d{4}$"
                                        title="Phone number should be in the format (123) 456-7890">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="customer-email" aria-describedby="emailHelp">
+                                <label for="edit-customer-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="edit-customer-email" aria-describedby="emailHelp">
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" id="cust-update-save-btn" class="btn btn-success">Update</button>
+                        <button type="button" id="cust-delete-btn" class="btn btn-danger">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- User Form -->
-    <section class="user-form">
+    <!-- User Form add -->
+    <section class="user-form-new">
         <div class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -627,38 +616,26 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">User Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label">User Id</label>
+                                <label for="add-user-code" class="form-label">Id:</label>
+                                <input id="add-user-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail2" class="form-label">Name</label>
-                                <input class="form-control" type="text" aria-label="default input example">
+                                <label for="add-user-name" class="form-label">Name</label>
+                                <input id="add-user-name" class="form-control" type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Address</label>
-                                <input class="form-control" type="text" aria-label="default input example">
+                                <label for="add-user-email" class="form-label">Email</label>
+                                <input id="add-user-email" type="email" class="form-control" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Salary</label>
-                                <input class="form-control" type="text" aria-label="default input example">
+                                <label for="add-user-password" class="form-label">Password</label>
+                                <input id="add-user-password" class="form-control" type="text" aria-label="default input example">
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button id="save-user-btn" type="button" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>
@@ -677,41 +654,27 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="user-id" class="form-label">Customer Id : </label>
-                                <br>
-                                <label for="exampleInputEmail2" class="form-label" id="user-id">Customer Id</label>
+                                <label for="edit-user-code" class="form-label">Id:</label>
+                                <input id="edit-user-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="user-name" class="form-label">Name</label>
-                                <input class="form-control" id="user-name"type="text" aria-label="default input example">
+                                <label for="edit-user-name" class="form-label">Name</label>
+                                <input id="edit-user-name" class="form-control" type="text" aria-label="default input example">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-address" class="form-label">Address</label>
-                                <input class="form-control" id="user-address" type="text" aria-label="default input example">
+                                <label for="edit-user-email" class="form-label">Email</label>
+                                <input id="edit-user-email" type="email" class="form-control" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="customer-phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="user-phone"
-                                       placeholder="(123) 456-7890"
-                                       pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                                       title="Phone number should be in the format (123) 456-7890">
-                            </div>
-                            <div class="mb-3">
-                                <label for="customer-email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="user-salary" class="form-label">Salary</label>
-                                <input class="form-control" id="user-salary" type="text" aria-label="default input example">
+                                <label for="edit-user-password" class="form-label">Password</label>
+                                <input id="edit-user-password" class="form-control" type="text" aria-label="default input example">
                             </div>
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" id="user-update-save-btn" class="btn btn-success">Update</button>
+                        <button type="button" id="user-delete-btn" class="btn btn-danger">Delete</button>
                     </div>
                 </div>
             </div>
@@ -730,16 +693,16 @@
                     <div class="modal-body">
                         <form id="new-product-form">
                             <div class="mb-3">
-                                <label for="newProductCode" class="form-label">Code:</label>
-                                <input id="newProductCode" class="form-control" type="text">
+                                <label for="add-product-code" class="form-label">Code:</label>
+                                <input id="add-product-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="newProductDesc" class="form-label">Description:</label>
-                                <input id="newProductDesc" class="form-control" type="text">
+                                <label for="add-product-des" class="form-label">Description:</label>
+                                <input id="add-product-des" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="newProductCategory" class="form-label">Description:</label>
-                                <input id="newProductCategory" class="form-control" type="text">
+                                <label for="add-product-cat" class="form-label">Category:</label>
+                                <input id="add-product-cat" class="form-control" type="text">
                             </div>
                             <div class="upload-container">
                                 <div class="upload-box" id="uploadBoxNew">
@@ -747,21 +710,21 @@
                                     <p>Drag & Drop to Upload File</p>
                                     <p>OR</p>
                                     <button type="button" id="browseFileButtonNew">Browse File</button>
-                                    <input type="file" id="fileInputNew" hidden>
+                                    <input type="file" id="add-product-img" hidden>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="newProductUnitPrice" class="form-label">Unit Price:</label>
-                                <input id="newProductUnitPrice" class="form-control" type="text">
+                                <label for="add-product-unitPrice" class="form-label">Unit Price:</label>
+                                <input id="add-product-unitPrice" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="newProductQtyOnHand" class="form-label">Qty On Hand:</label>
-                                <input id="newProductQtyOnHand" class="form-control" type="text">
+                                <label for="add-product-qntity" class="form-label">Qty On Hand:</label>
+                                <input id="add-product-qntity" class="form-control" type="text">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-primary" id="save-product-btn">Save</button>
                     </div>
                 </div>
             </div>
@@ -780,16 +743,16 @@
                     <div class="modal-body">
                         <form id="edit-product-form">
                             <div class="mb-3">
-                                <label for="editProductCode" class="form-label">Code:</label>
-                                <input id="editProductCode" class="form-control" type="text">
+                                <label for="edit-product-code" class="form-label">Code:</label>
+                                <input id="edit-product-code" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="editProductDesc" class="form-label">Description:</label>
-                                <input id="editProductDesc" class="form-control" type="text">
+                                <label for="edit-product-desc" class="form-label">Description:</label>
+                                <input id="edit-product-desc" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="editProductCategory" class="form-label">Category:</label>
-                                <input id="editProductCategory" class="form-control" type="text">
+                                <label for="edit-product-category" class="form-label">Category:</label>
+                                <input id="edit-product-category" class="form-control" type="text">
                             </div>
                             <div class="upload-container">
                                 <div class="upload-box" id="uploadBoxEdit">
@@ -802,29 +765,23 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="editProductUnitPrice" class="form-label">Unit Price:</label>
-                                <input id="editProductUnitPrice" class="form-control" type="text">
+                                <label for="edit-product-unitPrice" class="form-label">Unit Price:</label>
+                                <input id="edit-product-unitPrice" class="form-control" type="text">
                             </div>
                             <div class="mb-3">
-                                <label for="editProductQtyOnHand" class="form-label">Qty On Hand:</label>
-                                <input id="editProductQtyOnHand" class="form-control" type="text">
+                                <label for="edit-product-qtyOnHand" class="form-label">Qty On Hand:</label>
+                                <input id="edit-product-qtyOnHand" class="form-control" type="text">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-success" id="update-save-btn">Update</button>
+                        <button type="button" class="btn btn-danger" id="delete-product-btn">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
 
 
 
@@ -838,6 +795,13 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom JS -->
-    <script src="assets/scripts/script.js"></script>
+    <script src="../src/Controller/SignInController.js" type="module"></script>
+    <script src="../src/Controller/DashboardController.js" type="module"></script>
+    <script src="../src/Controller/CustomerController.js" type="module"></script>
+    <script src="../src/Controller/MainContentController.js" type="module"></script>
+    <script src="../src/Controller/OrderController.js" type="module"></script>
+    <script src="../src/Controller/ProductController.js" type="module"></script>
+    <script src="../src/Controller/UserController.js" type="module"></script>
+
 </body>
 </html>

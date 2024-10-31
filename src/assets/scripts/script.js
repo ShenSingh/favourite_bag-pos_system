@@ -51,12 +51,8 @@ $(document).ready(function() {
 
 $(document).ready(function () {
     const mainContent = $('.main-content');
-
     const customerButton = $('#customerBtn');
     const customerSection = $('.customer');
-    
-    const userButton = $('#userBtn');
-    const userSection = $('.user');
     // load customer
     customerButton.on('click', function (event) {
         event.preventDefault();
@@ -64,14 +60,7 @@ $(document).ready(function () {
         mainContent.append(customerSection);
         customerSection.show();
     });
-    // load user profile
-    userButton.on('click', function (event) {
-        event.preventDefault();
-        mainContent.empty();
-        mainContent.append(userSection);
-        userSection.show();
-    });
-
+    
 });
 
 ////////////////////////////////////////////////////// Customer Add Form Load //////////////////////////////////////////////////////////
@@ -108,21 +97,21 @@ $(document).ready(function () {
     const phone = $('#customer-phone');
     const address = $('#customer-address');
 
-    tableRows.on('click', function () {
-        const customer_id = $(this).find('.row-id').text();
-        const customer_name = $(this).find('.row-name').text();
-        const customer_email = $(this).find('.row-email').text();
-        const customer_phone = $(this).find('.row-phone').text();
-        const customer_address = $(this).find('.row-address').text();
+    // tableRows.on('click', function () {
+    //     const customer_id = $(this).find('.row-id').text();
+    //     const customer_name = $(this).find('.row-name').text();
+    //     const customer_email = $(this).find('.row-email').text();
+    //     const customer_phone = $(this).find('.row-phone').text();
+    //     const customer_address = $(this).find('.row-address').text();
 
-        id.text(customer_id);
-        name.val(customer_name);
-        email.val(customer_email);
-        phone.val(customer_phone);
-        address.val(customer_address);
+    //     id.text(customer_id);
+    //     name.val(customer_name);
+    //     email.val(customer_email);
+    //     phone.val(customer_phone);
+    //     address.val(customer_address);
 
-        customerTableModal.show();
-    });
+    //     // customerTableModal.show();
+    // });
 });
 
 ////////////////////////////////////////////////////// User Section Load //////////////////////////////////////////////////////////
@@ -178,6 +167,7 @@ $(document).ready(function () {
 
         userTableModal.show();
     });
+
 });
 
 ////////////////////////////////////////////////////// Product Section Load //////////////////////////////////////////////////////////
@@ -376,65 +366,7 @@ $(document).ready(function () {
 });
 
 ////////////////////////////////////////////////////// Data for arrays //////////////////////////////////////////////////////////
-let products = [
-    {
-        code: "B001",
-        description: "Classic Leather Tote",
-        category: "Bag",
-        unitPrice: 150.00,
-        qtyOnHand: 30,
-        image: "https://example.com/images/classic-leather-tote.jpg"
-    },
-    {
-        code: "B002",
-        description: "Modern Backpack",
-        category: "Bag",
-        unitPrice: 120.00,
-        qtyOnHand: 50,
-        image: "https://example.com/images/modern-backpack.jpg"
-    },
-    {
-        code: "B003",
-        description: "Elegant Clutch",
-        category: "Bag",
-        unitPrice: 80.00,
-        qtyOnHand: 20,
-        image: "https://example.com/images/elegant-clutch.jpg"
-    },
-    {
-        code: "B004",
-        description: "Durable Duffel Bag",
-        category: "Bag",
-        unitPrice: 100.00,
-        qtyOnHand: 40,
-        image: "https://example.com/images/durable-duffel-bag.jpg"
-    },
-    {
-        code: "B005",
-        description: "Stylish Satchel",
-        category: "Bag",
-        unitPrice: 130.00,
-        qtyOnHand: 25,
-        image: "https://example.com/images/stylish-satchel.jpg"
-    }
-];
 
-
-let customers = [
-    { id: "C001", name: "William Defoe", email: "william@example.com", phone: "12312312", address: "123 Street" },
-    { id: "C002", name: "Jane Smith", email: "jane@example.com", phone: "45645645", address: "456 Avenue" },
-    { id: "C003", name: "Tom Hardy", email: "tom@example.com", phone: "78978978", address: "789 Boulevard" },
-    { id: "C004", name: "Emily Blunt", email: "emily@example.com", phone: "11223344", address: "112 Street" },
-    { id: "C005", name: "Scarlett Johansson", email: "scarlett@example.com", phone: "22334455", address: "223 Avenue" },
-    { id: "C006", name: "Chris Hemsworth", email: "chris@example.com", phone: "33445566", address: "334 Boulevard" },
-    { id: "C007", name: "Robert Downey", email: "robert@example.com", phone: "44556677", address: "445 Road" },
-    { id: "C008", name: "Natalie Portman", email: "natalie@example.com", phone: "55667788", address: "556 Lane" }
-];
-
-let users = [
-    { id: "U001", name: "John Doe", email: "john@example.com", phone: "12312312", address: "456 Avenue", salary: 5000 },
-    { id: "U002", name: "Zendaya Maree", email: "zendaya@example.com", phone: "89089089", address: "456 Terrace", salary: 5200 }
-];
 
 /////////////////////////////////////////////////////////////////////// Table data display //////////////////////////////////////////////////////////
 
@@ -486,7 +418,7 @@ function displayCustomers() {
 // Function to display users in a table
 function displayUsers() {
     const userTableBody = $('.user-table tbody');
-    userTableBody.empty(); // Clear existing rows
+    userTableBody.empty();
 
     users.forEach(user => {
         let row = `
@@ -748,15 +680,21 @@ $(document).ready(function() {
     const signOutBtn = $('#signOutBtn');
 
     signInBtn.on('click', function(event) {
+        console.log("sign in btn click")
         event.preventDefault(); // Prevent form submission
 
-        // Make header, aside, and main content visible
-        $('#header').show();
-        $('#aside').show();
-        $('#main-content').show();
+        try{
+            // Make header, aside, and main content visible
+            $('#header').show();
+            $('#aside').show();
+            $('#main-content').show();
 
-        // Optionally, hide the login page
-        $('.login-page').hide();
+            // Optionally, hide the login page
+            $('.login-page').hide();
+        }catch (e) {
+            console.log(e);
+        }
+
     });
 
     signOutBtn.on('click', function(event) {
@@ -828,8 +766,6 @@ $(window).on('resize', adjustChartLayout);
 
 // Select the product list container
 const productList = $("#product-list");
-
-// Loop through the products array and generate product cards
 $.each(products, function(index, product) {
     const productCard = `
         <div class="col">
@@ -845,4 +781,106 @@ $.each(products, function(index, product) {
 
     // Append the product card to the product list
     productList.append(productCard);
+});
+
+// $(document).ready(function() {
+// const tableRows = $('.customer-table tbody tr');
+
+//     tableRows.click(function() {
+//         const rowData = $(this).children('td').map(function() {
+//             return $(this).text();
+//         }).get();
+        
+//         console.log('Row details:', rowData);
+//     });
+// });
+
+
+$('.customer-table tbody').on('click', 'tr', function() {
+    let index = $(this).index();
+    console.log('Row index:', index);
+
+
+
+    const customerTableModal = new bootstrap.Modal($('.customer-form-edit .modal').get(0));
+
+    const id = $('#customer-id');
+    const name = $('#customer-name');
+    const email = $('#customer-email');
+    const phone = $('#customer-phone');
+    const address = $('#customer-address');
+
+    id.text(customers[index].id);
+    name.val(customers[index].name);
+    email.val(customers[index].email);
+    phone.val(customers[index].phone);
+    address.val(customers[index].address);
+
+
+
+    customerTableModal.show();
+
+    // update customer
+
+    $('#cust-update').on('click', function () {
+        const userIndex = index;
+
+        if(name.text() == ""){
+            showAlert("Error!", "Please fill all the fields", "error");
+        }else{
+            customers[userIndex] = {
+                id: id.text(),
+                name: name.val(),
+                email: email.val(),
+                phone: phone.val(),
+                address: address.val()
+            };
+            displayCustomers();
+            customerTableModal.hide();
+            showAlert("Good job!", "Customer updated successfully", "success");
+        }
+
+    });
+
+    // delete customer
+
+    $('#cust-delete').on('click', function () {
+        customers.splice(index, 1);
+        displayCustomers();
+        customerTableModal.hide();
+        showAlert("Good job!", "Customer deleted successfully", "success");
+    });
+
+
+    const addCustomerTableModal = new bootstrap.Modal($('.customer-form .modal').get(0));
+
+    $('#save-customer-btn').on('click', function(){
+
+        console.log("click save btn")
+        // Create the customer object from form field values
+        const customer = {
+            id: $('#exampleInputEmail2').text().trim(),  // Assumes Customer Id is displayed in a label or span
+            name: $('.form-control[type="text"]').val().trim(),
+            address: $('#customer-address2').val().trim(),
+            phone: $('#customerPhone').val().trim(),
+            email: $('#exampleInputEmail2').val().trim()
+        };
+        
+        // Log the customer object to verify
+        console.log(customer);
+    
+        customers.push(customer); // Add the new customer to the array
+        displayCustomers(); // Refresh the customer table
+        addCustomerTableModal.hide(); // Hide the modal
+    });
+
+    function showAlert(title, txt , icon){
+        Swal.fire({
+            title: title,
+            text: txt,
+            icon: icon
+          });
+    }
+    
+
 });
