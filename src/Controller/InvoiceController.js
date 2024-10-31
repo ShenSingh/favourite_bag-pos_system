@@ -23,9 +23,7 @@ export function displayOrders() {
 }
 
 $(document).ready(function () {
-    console.log("call ready funtion");
     displayOrders();
-    console.log("Orders : "+orders);
 });
 
 // Event delegation to handle dynamically added "View" buttons

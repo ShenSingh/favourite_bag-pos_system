@@ -129,9 +129,6 @@ function handleCartItemDblClick() {
 $("#cart").on("dblclick", "li", handleCartItemDblClick);
 
 
-
-
-
 // Initial call to generate product cards
 $(document).ready(function() {
     generateProductCards();
