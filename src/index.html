@@ -343,7 +343,7 @@
     <section id="cash-register" class="cash-register" style="display: none">
         <form>
             <div class="form-title">
-                <nav class="navbar" >
+                <nav class="navbar">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
                             Order
@@ -351,8 +351,6 @@
                     </div>
                 </nav>
             </div>
-
-
 
             <!-- POS Layout Start -->
             <div class="container-fluid">
@@ -366,13 +364,11 @@
                             <nav class="navbar bg-body-tertiary">
                                 <div class="container">
                                     <form class="d-flex" role="search">
-                                        <div>
+                                        <div class="mb-3">
+                                            <label for="orderCustomerId" class="form-label">Customer Id</label>
                                             <select class="form-select" aria-label="Default select example" id="orderCustomerId">
                                                 <option selected>Select the customer</option>
                                             </select>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-outline-info" type="submit">Search</button>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-primary" id="customer-add-btn-reg">+ Add Customer</button>
@@ -401,8 +397,8 @@
                     <div id="bill" class="col-md-4 p-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">William Defoe</h5>
-                                <p class="card-text">#12312312</p>
+                                <h5 class="card-title" id="customer-tag"></h5>
+                                <p class="card-text" id="invoice-id"></p>
 
                                 <h6>Your Order:</h6>
                                 <ul id="cart" class="list-group mb-3">
@@ -414,18 +410,22 @@
                                 <p id="service-tax">Service Tax: $0.00</p>
                                 <h6 id="total-payment">Total Payment: $0.00</h6>
 
-                                <div class="mb-3">
-                                    <label for="cash" class="form-label">Cash</label>
-                                    <input id="cash" class="form-control" type="text">
-                                    <label for="balance" class="form-label">Balance</label>
-                                    <input id="balance" class="form-control" type="text">
 
+
+                                <!-- Cash Amount Input -->
+                                <div class="mb-3">
+                                    <label for="cashAmount" class="form-label">Cash Amount</label>
+                                    <input type="number" class="form-control" id="cashAmount" placeholder="Enter cash amount" min="0" step="0.01">
                                 </div>
 
-                                <button class="btn btn-primary w-100">Make Order</button>
+                                <!-- Balance Display -->
+                                <h6 id="balance">Balance: $0.00</h6>
+
+                                <button class="btn btn-primary w-100" id="makeOrderBtn">Make Order</button>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!-- POS Layout End -->
@@ -476,25 +476,7 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row" class="row-id">1</th>
-                        <td class="row-name">ShenSingh</td>
-                        <td class="row-date">2024-12-12</td>
-                        <td class="row-total">Rs. 2500.00</td>
-                        <td class="row-action">
-                            <button type="button" class="btn btn-danger">Update</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="row-id">1</th>
-                        <td class="row-name">ShenSingh</td>
-                        <td class="row-date">2024-12-12</td>
-                        <td class="row-total">Rs. 2500.00</td>
-                        <td class="row-action">
-                            <button type="button" class="btn btn-danger">Update</button>
-                        </td>
-                    </tr>
-
+                        <!-- load js arr -->
                     </tbody>
                 </table>
             </div>
@@ -626,7 +608,6 @@
                             </div>
                         </form>
                     </div>
-
                     <div class="modal-footer">
                         <button id="save-user-btn" type="button" class="btn btn-primary">Save</button>
                     </div>
@@ -795,6 +776,7 @@
     <script src="../src/Controller/OrderController.js" type="module"></script>
     <script src="../src/Controller/ProductController.js" type="module"></script>
     <script src="../src/Controller/UserController.js" type="module"></script>
+    <script src="../src/Controller/InvoiceController.js" type="module"></script>
 
 </body>
 </html>

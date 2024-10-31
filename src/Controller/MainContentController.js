@@ -3,6 +3,7 @@ import { reattachAddProductClick, reattachUpdateProductClick } from './ProductCo
 import { reattachAddCustomerClick, reattachUpdateCustomerClick } from './CustomerController.js';
 import { reattachAddUserClick, reattachUpdateUserClick } from './UserController.js';
 import { resetCart,setCustomerIds } from './OrderController.js';
+import { displayOrders } from './InvoiceController.js';
 
 // Call the function directly
 
@@ -87,6 +88,7 @@ $(document).ready(function() {
         reattachUpdateUserClick(); // reattach update user
         resetCart();
         setCustomerIds();
+        displayOrders();
     }
 
     // Call the reusable function for each button/section pair

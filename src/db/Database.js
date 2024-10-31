@@ -1,6 +1,7 @@
 import ProductModel from "../Model/ProductModel.js";
 import CustomerModel from "../Model/CustomerModel.js";
 import UserModel from "../Model/UserModel.js";
+import OrderModel from "../Model/OrderModel.js";
 
 
 export let customers = [
@@ -46,8 +47,8 @@ export let customers = [
 export let products = [
     new ProductModel(
         'B001',
-        'Blue T-Shirt',
-        'Clothing',
+        'Blue HandBag',
+        'handBag',
         19.99,
         50,
         'https://via.placeholder.com/100x100.png?text=Blue+T-Shirt'
@@ -55,7 +56,7 @@ export let products = [
     new ProductModel(
         'B002',
         'Wireless Mouse',
-        'Electronics',
+        'schoolBag',
         25.99,
         30,
         'https://via.placeholder.com/100x100.png?text=Wireless+Mouse'
@@ -63,7 +64,7 @@ export let products = [
     new ProductModel(
         'B003',
         'Water Bottle',
-        'Accessories',
+        'schoolBag',
         10.5,
         100,
         'https://via.placeholder.com/100x100.png?text=Water+Bottle'
@@ -71,7 +72,7 @@ export let products = [
     new ProductModel(
         'B004',
         'Running Shoes',
-        'Footwear',
+        'handBag',
         59.99,
         20,
         'https://via.placeholder.com/100x100.png?text=Running+Shoes'
@@ -79,7 +80,7 @@ export let products = [
     new ProductModel(
         'B005',
         'Notebook',
-        'Stationery',
+        'handBag',
         5.0,
         200,
         'https://via.placeholder.com/100x100.png?text=Notebook'
@@ -99,3 +100,5 @@ export let users = [
         "admin"
     )
 ];
+
+export let orders=[];
